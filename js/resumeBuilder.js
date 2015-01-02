@@ -11,10 +11,10 @@ var bio = {
 	},
 	"welcomeMessage" : "My Interactive Resume for Project 2",
 	"skills" : [
-		"HTML", 
-		"CSS", 
-		"JavaScript", 
-		"Git", 
+		"HTML",
+		"CSS",
+		"JavaScript",
+		"Git",
 		"GitHub"
 	],
 	"biopic" : "https://avatars2.githubusercontent.com/u/10307756?v=3&amp;s=460",
@@ -40,22 +40,22 @@ var bio = {
 	"format" : function (type,data) {
 		switch(type) {
 			case "mobile":
-				output = '<a href="tel:+1'+data.replace(/\D/g,'')+'">'+data+'</a>';
+				output = '<a class="contact-text" href="tel:+1'+data.replace(/\D/g,'')+'">'+data+'</a>';
 				break;
 			case "email":
-				output = '<a href="mailto:'+data+'">'+data+'</a>';
+				output = '<a class="contact-text" href="mailto:'+data+'">'+data+'</a>';
 				break;
 			case "github":
-				output = '<a href="https://github.com/'+data+'">'+data+'</a>';
+				output = '<a class="contact-text" href="https://github.com/'+data+'">'+data+'</a>';
 				break;
 			case "linkedin":
-				output = '<a href="http://linkedin.com/in/'+data+'">'+data+'</a>';
+				output = '<a class="contact-text" href="http://linkedin.com/in/'+data+'">'+data+'</a>';
 				break;
 			case "location":
-				output = '<a href="http://maps.google.com/?q='+data.replace(' ',"+")+'">'+data+'</a>';
+				output = '<a class="contact-text" href="http://maps.google.com/?q='+data.replace(' ',"+")+'">'+data+'</a>';
 				break;
 			case "twitter":
-				output = '<a href="http://twitter.com/'+data+'">'+data+'</a>';
+				output = '<a class="contact-text" href="http://twitter.com/'+data+'">'+data+'</a>';
 				break;
 			default:
 				output = data;
@@ -183,7 +183,7 @@ function inName(name) {
 	var n = name.trim().split(" ");
 	n[0] = n[0].slice(0,1).toUpperCase() + n[0].slice(1).toLowerCase();
 	n[1] = n[1].toUpperCase();
-	
+
 	var inName = n.join(" ");
 	return inName;
 }
