@@ -20,7 +20,7 @@ var bio = {
 	"biopic" : "https://avatars2.githubusercontent.com/u/10307756?v=3&amp;s=460",
 	"display" : function(){
 		// keys(bio.contacts) === undefined || keys(bio.contacts).length === 0;
-		for(i in bio.contacts) {
+		for(var i in bio.contacts) {
 			var v = bio.contacts[i];
 			if(v.length > 0) {
 				$("#topContacts, #footerContacts").append(HTMLcontactGeneric.replace("%contact%",i).replace("%data%",bio.format(i,v)));
@@ -32,7 +32,7 @@ var bio = {
 		$("#header").append(HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage));
 		if(bio.skills.length > 0) {
 			$("#header").append(HTMLskillsStart);
-			for(i in bio.skills) {
+			for(var i in bio.skills) {
 				$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
 			}
 		}
@@ -87,18 +87,18 @@ var education = {
 		}
 	],
 	"display" : function(){
-		for(i in education.schools){
+		for(var i in education.schools){
 			$('#education').append(HTMLschoolStart);
 			$('.education-entry:last').append(HTMLschoolName.replace("#",education.schools[i].url).replace("%data%",education.schools[i].name) + HTMLschoolDegree.replace("%data%",education.schools[i].degree));
 			$('.education-entry:last').append(HTMLschoolLocation.replace("%data%",education.schools[i].location));
 			$('.education-entry:last').append(HTMLschoolDates.replace("%data%",education.schools[i].dates));
 			if(education.schools[i].majors.length > 0) {
-				for(j in education.schools[i].majors) {
+				for(var j in education.schools[i].majors) {
 					$('.education-entry:last').append(HTMLschoolMajor.replace("%data%",education.schools[i].majors[j]));
 				}
 			}
 		}
-		for(i in education.onlineCourses) {
+		for(var i in education.onlineCourses) {
 			$('#education').append(HTMLonlineClasses);
 			$('#education').append(HTMLschoolStart);
 			$('.education-entry:last').append(HTMLonlineTitle.replace("#",education.onlineCourses[i].url).replace("%data%",education.onlineCourses[i].title)+HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school));
@@ -126,7 +126,7 @@ var work = {
 		}
 	],
 	"display" : function() {
-		for(i in work.jobs) {
+		for(var i in work.jobs) {
 			$('#workExperience').append(HTMLworkStart);
 			$('.work-entry:last').append(HTMLworkEmployer.replace("%data%",work.jobs[i].employer) + HTMLworkTitle.replace("%data%",work.jobs[i].title));
 			$('.work-entry:last').append(HTMLworkLocation.replace("%data%",work.jobs[i].location));
@@ -158,13 +158,13 @@ var projects = {
 		}
 	],
 	"display" : function(){
-		for(i in projects.projects){
+		for(var i in projects.projects){
 			$('#projects').append(HTMLprojectStart);
 			$('.project-entry:last').append(HTMLprojectTitle.replace("%data%",projects.projects[i].title));
 			$('.project-entry:last').append(HTMLprojectDates.replace("%data%",projects.projects[i].dates));
 			$('.project-entry:last').append(HTMLprojectDescription.replace("%data%",projects.projects[i].description));
 			if(projects.projects[i].images.length > 0) {
-				for (j in projects.projects[i].images){
+				for(var j in projects.projects[i].images){
 					$('.project-entry:last').append(HTMLprojectImage.replace("%data%",projects.projects[i].images[j]));
 				}
 			}
